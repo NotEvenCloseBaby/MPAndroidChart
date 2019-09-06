@@ -144,7 +144,6 @@ public class PieChartRenderer extends DataRenderer {
         PieData pieData = mChart.getData();
 
         for (IPieDataSet set : pieData.getDataSets()) {
-
             if (set.isVisible() && set.getEntryCount() > 0)
                 drawDataSet(c, set);
         }
@@ -265,7 +264,7 @@ public class PieChartRenderer extends DataRenderer {
 
             final boolean accountForSliceSpacing = sliceSpace > 0.f && sliceAngle <= 180.f;
 
-            mRenderPaint.setColor(dataSet.getColor(j));
+            //mRenderPaint.setColor(dataSet.getColor(j));
 
             final float sliceSpaceAngleOuter = visibleAngleCount == 1 ?
                     0.f :
@@ -405,7 +404,6 @@ public class PieChartRenderer extends DataRenderer {
 
     @Override
     public void drawValues(Canvas c) {
-
         MPPointF center = mChart.getCenterCircleBox();
 
         // get whole the radius
