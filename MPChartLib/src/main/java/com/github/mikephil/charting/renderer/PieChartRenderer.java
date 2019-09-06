@@ -264,7 +264,7 @@ public class PieChartRenderer extends DataRenderer {
 
             final boolean accountForSliceSpacing = sliceSpace > 0.f && sliceAngle <= 180.f;
 
-            //mRenderPaint.setColor(dataSet.getColor(j));
+            mRenderPaint.setColor(dataSet.getColor(j));
 
             final float sliceSpaceAngleOuter = visibleAngleCount == 1 ?
                     0.f :
@@ -466,7 +466,7 @@ public class PieChartRenderer extends DataRenderer {
 
             int entryCount = dataSet.getEntryCount();
 
-            //mValueLinePaint.setColor(dataSet.getValueLineColor());
+            mValueLinePaint.setColor(dataSet.getValueLineColor());
             mValueLinePaint.setStrokeWidth(Utils.convertDpToPixel(dataSet.getValueLineWidth()));
 
             final float sliceSpace = getSliceSpace(dataSet);
@@ -566,7 +566,7 @@ public class PieChartRenderer extends DataRenderer {
                     if (dataSet.getValueLineColor() != ColorTemplate.COLOR_NONE) {
 
                         if (dataSet.isUsingSliceColorAsValueLineColor()) {
-                            //mValueLinePaint.setColor(dataSet.getColor(j));
+                            mValueLinePaint.setColor(dataSet.getColor(j));
                         }
 
                         c.drawLine(pt0x, pt0y, pt1x, pt1y, mValueLinePaint);
@@ -645,7 +645,7 @@ public class PieChartRenderer extends DataRenderer {
 
     @Override
     public void drawValue(Canvas c, String valueText, float x, float y, int color) {
-        //mValuePaint.setColor(color);
+        mValuePaint.setColor(color);
         c.drawText(valueText, x, y, mValuePaint);
     }
 
