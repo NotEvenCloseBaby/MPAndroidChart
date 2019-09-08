@@ -100,6 +100,12 @@ public class PieChart extends PieRadarChartBase<PieData> {
      */
     private float mMinAngleForSlices = 0f;
 
+    //isCal
+    public boolean isCal = false;
+
+    //isCal
+    public boolean isEmptyMacros = false;
+
     public PieChart(Context context) {
         super(context);
     }
@@ -129,14 +135,14 @@ public class PieChart extends PieRadarChartBase<PieData> {
         if (mData == null)
             return;
 
-        mRenderer.drawData(canvas);
+        mRenderer.drawData(canvas, isCal);
 
         if (valuesToHighlight())
             mRenderer.drawHighlighted(canvas, mIndicesToHighlight);
 
         mRenderer.drawExtras(canvas);
 
-        mRenderer.drawValues(canvas);
+        mRenderer.drawValues(canvas, isCal);
 
         mLegendRenderer.renderLegend(canvas);
 
@@ -488,6 +494,11 @@ public class PieChart extends PieRadarChartBase<PieData> {
     @Override
     protected float getRequiredBaseOffset() {
         return 0;
+    }
+
+    @Override
+    public void setIsCal(boolean b) {
+        isCal = b;
     }
 
     @Override

@@ -70,7 +70,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
     }
 
     @Override
-    public void drawData(Canvas c) {
+    public void drawData(Canvas c, boolean isCal) {
 
         BarData barData = mChart.getBarData();
 
@@ -214,7 +214,7 @@ public class BarChartRenderer extends BarLineScatterCandleBubbleRenderer {
     }
 
     @Override
-    public void drawValues(Canvas c) {
+    public void drawValues(Canvas c, boolean isCal) {
 
         // if values are drawn
         if (isDrawingValuesAllowed(mChart)) {

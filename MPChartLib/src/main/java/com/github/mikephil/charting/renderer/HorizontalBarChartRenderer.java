@@ -142,7 +142,7 @@ public class HorizontalBarChartRenderer extends BarChartRenderer {
     }
 
     @Override
-    public void drawValues(Canvas c) {
+    public void drawValues(Canvas c, boolean isCal) {
         // if values are drawn
         if (isDrawingValuesAllowed(mChart)) {
 

@@ -83,10 +83,10 @@ public class CombinedChartRenderer extends DataRenderer {
     }
 
     @Override
-    public void drawData(Canvas c) {
+    public void drawData(Canvas c, boolean isCal) {
 
         for (DataRenderer renderer : mRenderers)
-            renderer.drawData(c);
+            renderer.drawData(c, false);
     }
 
     @Override
@@ -95,10 +95,10 @@ public class CombinedChartRenderer extends DataRenderer {
     }
 
     @Override
-    public void drawValues(Canvas c) {
+    public void drawValues(Canvas c, boolean isCal) {
 
         for (DataRenderer renderer : mRenderers)
-            renderer.drawValues(c);
+            renderer.drawValues(c, isCal);
     }
 
     @Override

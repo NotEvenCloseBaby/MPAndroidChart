@@ -496,4 +496,7 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
         });
         spinAnimator.start();
     }
+
+    //MY EDIT
+    public abstract void setIsCal(boolean b);
 }

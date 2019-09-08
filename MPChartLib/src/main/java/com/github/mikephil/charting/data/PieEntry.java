@@ -9,6 +9,8 @@ import android.util.Log;
  */
 @SuppressLint("ParcelCreator")
 public class PieEntry extends Entry {
+    //MY EDIT
+    public String showValue = null;
 
     private String label;
 
@@ -26,6 +28,13 @@ public class PieEntry extends Entry {
 
     public PieEntry(float value, Drawable icon, Object data) {
         super(0f, value, icon, data);
+    }
+
+    //MY EDIT
+    public PieEntry(String showValue, float value, String label) {
+        super(0f, value);
+        this.showValue = showValue;
+        this.label = label;
     }
 
     public PieEntry(float value, String label) {

@@ -16,6 +16,8 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.RelativeLayout;
 
+import androidx.core.content.ContextCompat;
+
 import com.github.mikephil.charting.animation.Easing;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.Legend;
@@ -94,23 +96,31 @@ public class HalfPieChartActivity extends DemoBase {
 
         ArrayList<PieEntry> values = new ArrayList<>();
 
-        for (int i = 0; i < count; i++) {
-            values.add(new PieEntry((float) ((Math.random() * range) + range / 5), parties[i % parties.length]));
-        }
+        //values
+        values.add(new PieEntry("20/100", 0.2f, "Kcal"));
+        values.add(new PieEntry("", 0.8f, ""));
+
 
         PieDataSet dataSet = new PieDataSet(values, "Election Results");
-        dataSet.setSliceSpace(3f);
+        dataSet.setSliceSpace(0f);
         dataSet.setSelectionShift(5f);
 
-        dataSet.setColors(ColorTemplate.MATERIAL_COLORS);
+        ArrayList<Integer> colors = new ArrayList<>();
+
+        colors.add(Color.rgb(192, 255, 140));
+        colors.add(Color.argb(0,192, 255, 140));
+
+        dataSet.setColors(colors);
         //dataSet.setSelectionShift(0f);
 
         PieData data = new PieData(dataSet);
         data.setValueFormatter(new PercentFormatter());
         data.setValueTextSize(11f);
-        data.setValueTextColor(Color.WHITE);
+        data.setValueTextColor(Color.RED);
         data.setValueTypeface(tfLight);
         chart.setData(data);
+        chart.setIsCal(true);
+        //chart.setIsEmptyMacros(true);
 
         chart.invalidate();
     }

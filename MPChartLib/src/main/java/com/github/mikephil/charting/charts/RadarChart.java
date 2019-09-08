@@ -140,7 +140,7 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
         if (mYAxis.isEnabled() && mYAxis.isDrawLimitLinesBehindDataEnabled())
             mYAxisRenderer.renderLimitLines(canvas);
 
-        mRenderer.drawData(canvas);
+        mRenderer.drawData(canvas, false);
 
         if (valuesToHighlight())
             mRenderer.drawHighlighted(canvas, mIndicesToHighlight);
@@ -150,7 +150,7 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
 
         mYAxisRenderer.renderAxisLabels(canvas);
 
-        mRenderer.drawValues(canvas);
+        mRenderer.drawValues(canvas, false);
 
         mLegendRenderer.renderLegend(canvas);
 
@@ -348,6 +348,12 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
      */
     public float getYChartMin() {
         return mYAxis.mAxisMinimum;
+    }
+
+    //MY EDIT
+    @Override
+    public void setIsCal(boolean b) {
+
     }
 
     /**
