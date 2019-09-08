@@ -141,7 +141,7 @@ public class PieChartRenderer extends DataRenderer {
 
         drawBitmap.eraseColor(Color.TRANSPARENT);
 
-        if(isCal)
+        if(bgColor != Color.TRANSPARENT)
             drawBackground(c, bgColor);
 
         PieData pieData = mChart.getData();
