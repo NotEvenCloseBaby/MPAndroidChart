@@ -42,7 +42,7 @@ public class CandleStickChartRenderer extends LineScatterCandleRadarRenderer {
     }
 
     @Override
-    public void drawData(Canvas c, boolean isCal) {
+    public void drawData(Canvas c, boolean isCal, int bgColor) {
 
         CandleData candleData = mChart.getCandleData();
 

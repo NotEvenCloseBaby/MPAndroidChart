@@ -1,6 +1,7 @@
 package com.github.mikephil.charting.renderer;
 
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.util.Log;
 
 import com.github.mikephil.charting.animation.ChartAnimator;
@@ -83,10 +84,10 @@ public class CombinedChartRenderer extends DataRenderer {
     }
 
     @Override
-    public void drawData(Canvas c, boolean isCal) {
+    public void drawData(Canvas c, boolean isCal, int bgColor) {
 
         for (DataRenderer renderer : mRenderers)
-            renderer.drawData(c, false);
+            renderer.drawData(c, false, Color.TRANSPARENT);
     }
 
     @Override

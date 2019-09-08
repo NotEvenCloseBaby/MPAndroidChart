@@ -120,6 +120,7 @@ public class HalfPieChartActivity extends DemoBase {
         data.setValueTypeface(tfLight);
         chart.setData(data);
         chart.setIsCal(true);
+        chart.setBgColor(Color.CYAN);
         //chart.setIsEmptyMacros(true);
 
         chart.invalidate();

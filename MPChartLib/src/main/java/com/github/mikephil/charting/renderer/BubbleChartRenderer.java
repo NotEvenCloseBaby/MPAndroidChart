@@ -44,7 +44,7 @@ public class BubbleChartRenderer extends BarLineScatterCandleBubbleRenderer {
     }
 
     @Override
-    public void drawData(Canvas c, boolean isCal) {
+    public void drawData(Canvas c, boolean isCal, int bgColor) {
 
         BubbleData bubbleData = mChart.getBubbleData();
 

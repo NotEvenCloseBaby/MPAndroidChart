@@ -72,7 +72,7 @@ public class LineChartRenderer extends LineRadarRenderer {
     }
 
     @Override
-    public void drawData(Canvas c, boolean isCal) {
+    public void drawData(Canvas c, boolean isCal, int bgColor) {
 
         int width = (int) mViewPortHandler.getChartWidth();
         int height = (int) mViewPortHandler.getChartHeight();

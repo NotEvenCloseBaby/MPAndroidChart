@@ -499,4 +499,7 @@ public abstract class PieRadarChartBase<T extends ChartData<? extends IDataSet<?
 
     //MY EDIT
     public abstract void setIsCal(boolean b);
+
+    //MY EDIT
+    public abstract void setBgColor(int bgColor);
 }

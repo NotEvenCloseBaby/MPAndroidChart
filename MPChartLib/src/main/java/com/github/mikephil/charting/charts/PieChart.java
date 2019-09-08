@@ -3,6 +3,7 @@ package com.github.mikephil.charting.charts;
 
 import android.content.Context;
 import android.graphics.Canvas;
+import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
 import android.graphics.Typeface;
@@ -100,11 +101,11 @@ public class PieChart extends PieRadarChartBase<PieData> {
      */
     private float mMinAngleForSlices = 0f;
 
-    //isCal
+    //MY EDIT
     public boolean isCal = false;
 
-    //isCal
-    public boolean isEmptyMacros = false;
+    //MY EDIT
+    public int bgColor = Color.TRANSPARENT;
 
     public PieChart(Context context) {
         super(context);
@@ -135,7 +136,7 @@ public class PieChart extends PieRadarChartBase<PieData> {
         if (mData == null)
             return;
 
-        mRenderer.drawData(canvas, isCal);
+        mRenderer.drawData(canvas, isCal, bgColor);
 
         if (valuesToHighlight())
             mRenderer.drawHighlighted(canvas, mIndicesToHighlight);
@@ -499,6 +500,11 @@ public class PieChart extends PieRadarChartBase<PieData> {
     @Override
     public void setIsCal(boolean b) {
         isCal = b;
+    }
+
+    @Override
+    public void setBgColor(int bgColor) {
+        this.bgColor = bgColor;
     }
 
     @Override

@@ -140,7 +140,7 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
         if (mYAxis.isEnabled() && mYAxis.isDrawLimitLinesBehindDataEnabled())
             mYAxisRenderer.renderLimitLines(canvas);
 
-        mRenderer.drawData(canvas, false);
+        mRenderer.drawData(canvas, false, Color.TRANSPARENT);
 
         if (valuesToHighlight())
             mRenderer.drawHighlighted(canvas, mIndicesToHighlight);
@@ -353,6 +353,11 @@ public class RadarChart extends PieRadarChartBase<RadarData> {
     //MY EDIT
     @Override
     public void setIsCal(boolean b) {
+
+    }
+
+    @Override
+    public void setBgColor(int bgColor) {
 
     }
 

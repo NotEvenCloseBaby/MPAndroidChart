@@ -55,7 +55,7 @@ public class RadarChartRenderer extends LineRadarRenderer {
     }
 
     @Override
-    public void drawData(Canvas c, boolean isCal) {
+    public void drawData(Canvas c, boolean isCal, int bgColor) {
 
         RadarData radarData = mChart.getData();
 

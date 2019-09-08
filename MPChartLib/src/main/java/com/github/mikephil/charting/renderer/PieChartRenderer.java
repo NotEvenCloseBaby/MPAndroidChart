@@ -120,7 +120,7 @@ public class PieChartRenderer extends DataRenderer {
     }
 
     @Override
-    public void drawData(Canvas c, boolean isCal) {
+    public void drawData(Canvas c, boolean isCal, int bgColor) {
 
         int width = (int) mViewPortHandler.getChartWidth();
         int height = (int) mViewPortHandler.getChartHeight();
@@ -142,7 +142,7 @@ public class PieChartRenderer extends DataRenderer {
         drawBitmap.eraseColor(Color.TRANSPARENT);
 
         if(isCal)
-            drawBackground(c);
+            drawBackground(c, bgColor);
 
         PieData pieData = mChart.getData();
 
@@ -406,7 +406,7 @@ public class PieChartRenderer extends DataRenderer {
     }
 
     //MY EDIT
-    public void drawBackground(Canvas c) {
+    public void drawBackground(Canvas c, int bgColor) {
 
         float angle = 0;
         float rotationAngle = mChart.getRotationAngle();
@@ -439,7 +439,7 @@ public class PieChartRenderer extends DataRenderer {
 
             final boolean accountForSliceSpacing = sliceSpace > 0.f && sliceAngle <= 180.f;
 
-            mRenderPaint.setColor(Color.BLUE);
+            mRenderPaint.setColor(bgColor);
 
             final float sliceSpaceAngleOuter = visibleAngleCount == 1 ?
                     0.f :

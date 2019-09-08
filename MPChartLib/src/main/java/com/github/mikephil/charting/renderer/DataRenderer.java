@@ -118,11 +118,11 @@ public abstract class DataRenderer extends Renderer {
 
     /**
      * Draws the actual data in form of lines, bars, ... depending on Renderer subclass.
-     *
-     * @param c
+     *  @param c
      * @param isCal
+     * @param bgColor
      */
-    public abstract void drawData(Canvas c, boolean isCal);
+    public abstract void drawData(Canvas c, boolean isCal, int bgColor);
 
     /**
      * Loops over all Entrys and draws their values.
